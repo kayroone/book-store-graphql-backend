@@ -2,6 +2,7 @@ package de.jwiegmann.bookstore;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
+import de.jwiegmann.bookstore.store.GraphQLDataFetchers;
 import graphql.GraphQL;
 import graphql.schema.GraphQLSchema;
 import graphql.schema.idl.RuntimeWiring;
@@ -34,7 +35,7 @@ public class GraphQLProvider {
     @PostConstruct
     public void init() throws IOException {
 
-        URL url = Resources.getResource("schema.graphqls");
+        URL url = Resources.getResource("static/schema.graphqls");
         String sdl = Resources.toString(url, Charsets.UTF_8);
 
         GraphQLSchema graphQLSchema = buildSchema(sdl);

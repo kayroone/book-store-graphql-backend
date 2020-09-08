@@ -26,6 +26,8 @@
         <version.graphql-java>2020-07-03T01-10-37-bb87d8f</version.graphql-java>
         <version.graphql-java-spring>2020-07-12T23-24-35-c6606f6</version.graphql-java-spring>
         <version.guava>29.0-jre</version.guava>
+        <version.javax-validation>2.0.1.Final</version.javax-validation>
+        <version.commons-lang>3.11</version.commons-lang>
 
         <maven.versions.plugin>2.7</maven.versions.plugin>
     </properties>
@@ -35,6 +37,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -64,11 +70,32 @@
             <artifactId>graphql-java-spring-boot-starter-webmvc</artifactId>
             <version>${version.graphql-java-spring}</version>
         </dependency>
-        <!-- Guava Utils -->
+        <!-- Database -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.1.5.Final</version>
+        </dependency>
+        <!-- Utils -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${version.guava}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${version.commons-lang}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${version.javax-validation}</version>
         </dependency>
     </dependencies>
 
