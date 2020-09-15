@@ -1,11 +1,13 @@
 package de.jwiegmann.bookstore.domain.book;
 
+import de.jwiegmann.bookstore.domain.author.Author;
 import de.jwiegmann.bookstore.domain.builder.DefaultBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Book {
@@ -16,7 +18,9 @@ public class Book {
 
   private String name;
   private Integer pageCount;
-  private Integer authorId;
+
+  @ManyToOne
+  private Author author;
 
   protected Book() {
   }
@@ -33,8 +37,8 @@ public class Book {
     return pageCount;
   }
 
-  public Integer getAuthorId() {
-    return authorId;
+  public Author getAuthor() {
+    return author;
   }
 
   public static BookBuilder newBuilder() {
@@ -62,8 +66,8 @@ public class Book {
       return this;
     }
 
-    public BookBuilder withAuthorId(Integer authorId) {
-      this.instance.authorId = authorId;
+    public BookBuilder withAuthor(Author author) {
+      this.instance.author = author;
       return this;
     }
   }

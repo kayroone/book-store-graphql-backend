@@ -23,21 +23,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <version.graphql-java>2020-07-03T01-10-37-bb87d8f</version.graphql-java>
-        <version.graphql-java-spring>2020-07-12T23-24-35-c6606f6</version.graphql-java-spring>
-        <version.guava>29.0-jre</version.guava>
-        <version.javax-validation>2.0.1.Final</version.javax-validation>
-        <version.commons-lang>3.11</version.commons-lang>
+        <version.graphql-dev-tools>5.2.4</version.graphql-dev-tools>
+        <version.graphql-spring-boot-starter>5.0.2</version.graphql-spring-boot-starter>
+        <version.hibernate-validator>6.1.5.Final</version.hibernate-validator>
 
         <maven.versions.plugin>2.7</maven.versions.plugin>
     </properties>
 
     <dependencies>
         <!-- Spring Boot -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -59,17 +53,19 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
         <!-- GraphQL -->
         <dependency>
             <groupId>com.graphql-java</groupId>
-            <artifactId>graphql-java</artifactId>
-            <version>${version.graphql-java}</version>
+            <artifactId>graphql-java-tools</artifactId>
+            <version>${version.graphql-dev-tools}</version>
         </dependency>
         <dependency>
             <groupId>com.graphql-java</groupId>
-            <artifactId>graphql-java-spring-boot-starter-webmvc</artifactId>
-            <version>${version.graphql-java-spring}</version>
+            <artifactId>graphql-spring-boot-starter</artifactId>
+            <version>${version.graphql-spring-boot-starter}</version>
         </dependency>
+
         <!-- Database -->
         <dependency>
             <groupId>com.h2database</groupId>
@@ -79,33 +75,24 @@
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>6.1.5.Final</version>
-        </dependency>
-        <!-- Utils -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${version.guava}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${version.commons-lang}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <version>${version.javax-validation}</version>
+            <version>${version.hibernate-validator}</version>
         </dependency>
     </dependencies>
 
     <build>
+        <!-- Sprint plugin -->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+            <!-- Versions plugin -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${maven.versions.plugin}</version>
+            </plugin>
         </plugins>
     </build>
-
 </project>
