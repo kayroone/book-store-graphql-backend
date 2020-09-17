@@ -23,9 +23,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <version.graphql-dev-tools>5.2.4</version.graphql-dev-tools>
         <version.graphql-spring-boot-starter>5.0.2</version.graphql-spring-boot-starter>
+        <version.graphql-dev-tools>5.2.4</version.graphql-dev-tools>
+
         <version.hibernate-validator>6.1.5.Final</version.hibernate-validator>
+        <version.jackson>2.11.2</version.jackson>
 
         <maven.versions.plugin>2.7</maven.versions.plugin>
     </properties>
@@ -76,6 +78,13 @@
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>${version.hibernate-validator}</version>
+        </dependency>
+
+        <!-- Utils -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${version.jackson}</version>
         </dependency>
     </dependencies>
 
