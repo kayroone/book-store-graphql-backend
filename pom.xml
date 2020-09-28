@@ -28,6 +28,7 @@
 
         <version.hibernate-validator>6.1.5.Final</version.hibernate-validator>
         <version.jackson>2.11.2</version.jackson>
+        <version.google-guava>29.0-jre</version.google-guava>
 
         <maven.versions.plugin>2.7</maven.versions.plugin>
     </properties>
@@ -85,6 +86,11 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
             <version>${version.jackson}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${version.google-guava}</version>
         </dependency>
     </dependencies>
 

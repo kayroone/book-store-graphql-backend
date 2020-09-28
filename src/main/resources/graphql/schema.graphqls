@@ -1,9 +1,11 @@
 type Query {
     bookById(id: ID): Book
+    getAllBooks: [Book!]!
 }
 
 type Mutation {
     createBook(name: String, pageCount: Int, firstName: String, lastName: String): Book
+    deleteBookById(id: ID): Boolean
 }
 
 type Book {

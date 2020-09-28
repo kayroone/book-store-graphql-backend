@@ -3,6 +3,7 @@ package de.jwiegmann.bookstore.domain.book;
 import de.jwiegmann.bookstore.domain.author.Author;
 import de.jwiegmann.bookstore.domain.builder.DefaultBuilder;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

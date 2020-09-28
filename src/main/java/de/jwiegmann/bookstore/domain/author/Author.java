@@ -17,9 +17,6 @@ public class Author {
   private String firstName;
   private String lastName;
 
-  protected Author() {
-  }
-
   public Integer getId() {
     return id;
   }

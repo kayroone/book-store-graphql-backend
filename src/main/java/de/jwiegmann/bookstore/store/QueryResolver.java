@@ -1,6 +1,7 @@
 package de.jwiegmann.bookstore.store;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
+import com.google.common.collect.Lists;
 import de.jwiegmann.bookstore.domain.author.Author;
 import de.jwiegmann.bookstore.domain.book.Book;
 import de.jwiegmann.bookstore.domain.repository.AuthorRepository;
@@ -9,30 +10,36 @@ import de.jwiegmann.bookstore.infrastructure.exception.BookNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
 public class QueryResolver implements GraphQLQueryResolver {
 
-  @Autowired
-  BookRepository bookRepository;
+    @Autowired
+    BookRepository bookRepository;
 
-  @Autowired
-  AuthorRepository authorRepository;
+    @Autowired
+    AuthorRepository authorRepository;
 
-  public Book bookById(Integer id) {
+    public Book bookById(Integer id) {
 
-    Optional<Book> book = bookRepository.findById(id);
+        Optional<Book> book = bookRepository.findById(id);
 
-    if (book.isPresent()) {
-      return book.get();
+        if (book.isPresent()) {
+            return book.get();
+        }
+
+        throw new BookNotFoundException(id);
     }
 
-    throw new BookNotFoundException(id);
-  }
+    public List<Book> getAllBooks() {
 
-  public Author getAuthor(Book book) {
+        return Lists.newArrayList(bookRepository.findAll());
+    }
 
-    return book.getAuthor();
-  }
+    public Author getAuthor(Book book) {
+
+        return book.getAuthor();
+    }
 }
