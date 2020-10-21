@@ -23,12 +23,12 @@ public class GraphQlExceptionHandler implements GraphQLErrorHandler {
 
         if (error instanceof ExceptionWhileDataFetching) {
             ExceptionWhileDataFetching exceptionError = (ExceptionWhileDataFetching) error;
-            BookStoreError bookStoreError = new BookStoreError();
-            bookStoreError.setMessage(exceptionError.getException().getMessage());
-            bookStoreError.setPath(exceptionError.getPath());
-            bookStoreError.setLocations(exceptionError.getLocations());
-            bookStoreError.setExtensions(exceptionError.getExtensions());
-            return bookStoreError;
+            StoreError storeError = new StoreError();
+            storeError.setMessage(exceptionError.getException().getMessage());
+            storeError.setPath(exceptionError.getPath());
+            storeError.setLocations(exceptionError.getLocations());
+            storeError.setExtensions(exceptionError.getExtensions());
+            return storeError;
         }
 
         return error;

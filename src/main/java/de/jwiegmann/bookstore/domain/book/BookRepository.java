@@ -1,4 +1,4 @@
-package de.jwiegmann.bookstore.domain.repository;
+package de.jwiegmann.bookstore.domain.book;
 
 import de.jwiegmann.bookstore.domain.book.Book;
 import org.springframework.data.repository.CrudRepository;

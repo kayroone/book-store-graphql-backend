@@ -1,9 +1,12 @@
-package de.jwiegmann.bookstore.store;
+package de.jwiegmann.bookstore.application;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import de.jwiegmann.bookstore.domain.author.Author;
+import de.jwiegmann.bookstore.domain.author.AuthorService;
 import de.jwiegmann.bookstore.domain.book.Book;
-import de.jwiegmann.bookstore.infrastructure.exception.BookNotFoundException;
+import de.jwiegmann.bookstore.domain.book.BookPublisher;
+import de.jwiegmann.bookstore.domain.book.BookService;
+import de.jwiegmann.bookstore.domain.book.BookNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +21,9 @@ public class MutationResolver implements GraphQLMutationResolver {
     @Autowired
     AuthorService authorService;
 
+    @Autowired
+    BookPublisher bookPublisher;
+
     public Book createBook(String name, Integer pageCount, String firstName, String lastName) {
 
         Author author = authorService.findOrCreateAuthor(firstName, lastName);
@@ -27,6 +33,8 @@ public class MutationResolver implements GraphQLMutationResolver {
                 .withPageCount(pageCount)
                 .withAuthor(author)
                 .build();
+
+        bookPublisher.fireBookCreatedEvent(book);
 
         return bookService.save(book);
     }

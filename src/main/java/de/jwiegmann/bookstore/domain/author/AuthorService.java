@@ -1,7 +1,7 @@
-package de.jwiegmann.bookstore.store;
+package de.jwiegmann.bookstore.domain.author;
 
 import de.jwiegmann.bookstore.domain.author.Author;
-import de.jwiegmann.bookstore.domain.repository.AuthorRepository;
+import de.jwiegmann.bookstore.domain.author.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

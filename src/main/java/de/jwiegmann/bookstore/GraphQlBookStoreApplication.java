@@ -2,12 +2,11 @@ package de.jwiegmann.bookstore;
 
 import de.jwiegmann.bookstore.domain.author.Author;
 import de.jwiegmann.bookstore.domain.book.Book;
-import de.jwiegmann.bookstore.domain.repository.AuthorRepository;
-import de.jwiegmann.bookstore.domain.repository.BookRepository;
+import de.jwiegmann.bookstore.domain.author.AuthorRepository;
+import de.jwiegmann.bookstore.domain.book.BookRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication

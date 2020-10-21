@@ -8,6 +8,10 @@ type Mutation {
     deleteBookById(id: ID): Boolean
 }
 
+type Subscription {
+    bookCreated: Book
+}
+
 type Book {
     id: ID
     name: String

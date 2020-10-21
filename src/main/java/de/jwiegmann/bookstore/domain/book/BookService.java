@@ -1,7 +1,7 @@
-package de.jwiegmann.bookstore.store;
+package de.jwiegmann.bookstore.domain.book;
 
 import de.jwiegmann.bookstore.domain.book.Book;
-import de.jwiegmann.bookstore.domain.repository.BookRepository;
+import de.jwiegmann.bookstore.domain.book.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

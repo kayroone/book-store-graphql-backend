@@ -29,6 +29,7 @@
         <version.hibernate-validator>6.1.5.Final</version.hibernate-validator>
         <version.jackson>2.11.2</version.jackson>
         <version.google-guava>29.0-jre</version.google-guava>
+        <version.reactor>3.3.10.RELEASE</version.reactor>
 
         <maven.versions.plugin>2.7</maven.versions.plugin>
     </properties>
@@ -38,6 +39,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -68,6 +73,11 @@
             <artifactId>graphql-spring-boot-starter</artifactId>
             <version>${version.graphql-spring-boot-starter}</version>
         </dependency>
+        <dependency>
+            <groupId>com.graphql-java</groupId>
+            <artifactId>graphiql-spring-boot-starter</artifactId>
+            <version>5.0.2</version>
+        </dependency>
 
         <!-- Database -->
         <dependency>
@@ -91,6 +101,11 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${version.google-guava}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <version>${version.reactor}</version>
         </dependency>
     </dependencies>
 

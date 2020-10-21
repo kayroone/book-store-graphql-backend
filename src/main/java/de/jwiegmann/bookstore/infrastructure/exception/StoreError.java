@@ -8,7 +8,7 @@ import graphql.language.SourceLocation;
 import java.util.List;
 import java.util.Map;
 
-public class BookStoreError implements GraphQLError {
+public class StoreError implements GraphQLError {
 
   private String message;
   private List<Object> path;

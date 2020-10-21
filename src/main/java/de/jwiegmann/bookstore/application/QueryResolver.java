@@ -1,12 +1,12 @@
-package de.jwiegmann.bookstore.store;
+package de.jwiegmann.bookstore.application;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.google.common.collect.Lists;
 import de.jwiegmann.bookstore.domain.author.Author;
 import de.jwiegmann.bookstore.domain.book.Book;
-import de.jwiegmann.bookstore.domain.repository.AuthorRepository;
-import de.jwiegmann.bookstore.domain.repository.BookRepository;
-import de.jwiegmann.bookstore.infrastructure.exception.BookNotFoundException;
+import de.jwiegmann.bookstore.domain.author.AuthorRepository;
+import de.jwiegmann.bookstore.domain.book.BookRepository;
+import de.jwiegmann.bookstore.domain.book.BookNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

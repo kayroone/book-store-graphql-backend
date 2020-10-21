@@ -1,5 +1,6 @@
-package de.jwiegmann.bookstore.infrastructure.exception;
+package de.jwiegmann.bookstore.domain.book;
 
+import de.jwiegmann.bookstore.infrastructure.exception.GraphQlException;
 import graphql.ErrorType;
 import graphql.GraphQLError;
 import graphql.language.SourceLocation;
